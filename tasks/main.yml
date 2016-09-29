@@ -14,7 +14,7 @@
 - name: ensure backports apt repo is setup
   apt_repository: >
     repo="deb {{ backports_url }} {{ backports_distribution_release }} main"
-    state=present 
+    state=present
     update_cache=yes
   sudo: yes
 
@@ -27,4 +27,4 @@
     default_release="{{ backports_distribution_release }}"
 
 - name: ensure tlsdate is running
-  service: name=tlsdate state=running
+  service: name=tlsdated state=running
